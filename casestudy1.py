@@ -40,3 +40,46 @@ sns.barplot(x='City', y='Population', data=city_df, order=city_df.sort_values('U
 locs, labels = plt.xticks()
 plt.setp(labels, rotation=90)
 plt.title('Users per City')
+plt.show()
+
+#Date of Travel vs Income Earned per Cab Company
+plt.figure(figsize=(9,6))
+sns.lineplot(x='Date of Travel', y='Total', data=cab_df, hue='Company')
+plt.title('Date of Travel vs Income Earned per Cab Company')
+plt.xlabel('Date of Travel')
+plt.ylabel('Income Earned per Cab Company')
+plt.show()
+
+
+#Distance Traveled vs Income earned per cab company 
+plt.figure(figsize=(9,6))
+sns.lineplot(x='KM Travelled', y='Total', data=cab_df, hue='Company')
+plt.title("Distance Traveled vs Income per Cab Ride")
+plt.ylabel("Income per Car Ride")
+plt.xlabel("Distance Traveled in KM")
+plt.show()
+
+#Total income per cab company
+plt.figure(figsize=(9,6))
+sns.histplot(x='Company', y='Total', data=cab_df)
+plt.title("Company vs Income per Cab Ride")
+plt.xlabel("Company")
+plt.ylabel("Income per Car Ride")
+plt.show()
+
+
+#Count of Cabs per Company per City
+plt.figure(figsize=(9, 6))
+sns.countplot(x='Company', data=cab_df, hue=cab_df['City'])
+plt.title('Count of Cabs per Company')
+plt.ylabel('Count')
+plt.xlabel('Company')
+plt.show()
+
+#Diagram of the companies and different totals per city. 
+plt.figure(figsize=(9,6))
+sns.histplot(x='Company',y='Total', data=cab_df, hue=cab_df["City"])
+locs, labels = plt.xticks()
+plt.setp(labels, rotation=45)
+plt.title('Total vs Cabs')
+plt.show()
