@@ -15,13 +15,6 @@ cab_df['Total'] = total
 #Change the date of travel column to a datetime format. 
 cab_df["Date of Travel"] = pd.to_datetime(cab_df["Date of Travel"], format = "%m/%d/%Y")
 
-
-
-
-
-
-
-
 #Count of Payment Modes
 plt.figure(figsize=(9,6))
 ax =sns.countplot(x='Payment_Mode', data=cab_df, hue='Company')
